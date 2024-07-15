@@ -1,0 +1,57 @@
+
+
+.activities-body {
+    display: block;
+    margin-top: 80px;
+    justify-content: center; 
+    text-align: center;
+}
+
+.activities-body a{
+    font-size: 1.7rem;
+    color: #9BAE45;
+    
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.photos-activities {
+    display: flex;
+    justify-content: center;
+}
+
+.activity {
+    margin: 100px 50px;
+
+}
+
+.activity img{
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.albergue-photo{
+    margin: 0 0 80px 0;
+}
+
+.albergue-photo img{
+    width: 70%;
+    height: 70%;
+    cursor: pointer;
+}
+
+.albergue-photo a{
+    display: block;
+    margin-top: 10px ;
+}
+
+.activity a {
+    display: block;
+    margin-top: 10px;
+    size: 1.5rem;
+}
+
+.activities-body a:hover{
+    color: #20aec8;
+}

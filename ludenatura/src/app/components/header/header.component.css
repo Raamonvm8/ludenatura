@@ -1,0 +1,123 @@
+.wrapper {
+    width: 90%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.site-branding {
+    text-align: center;
+    padding: 15px 0;
+}
+.site-logo {
+    margin-bottom: 15px;
+    size: 20px;
+}
+
+a {
+    color: #20aec8;
+    text-decoration: none;
+}
+
+img {
+    width: 120px;
+    height: 267;
+}
+.site-title {
+    margin: 0;
+    text-transform: uppercase;
+    font-family: 'Khand', sans-serif;
+    letter-spacing: 10px;
+    line-height: 38px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.site-title a:hover {
+    color: #b0c745;
+}
+
+p {
+    margin-bottom: 1.5em;
+    color: #778a9c;
+}
+
+nav {
+    display: flex;
+    border-top: 3px solid #eee;
+    border-bottom: 3px solid #eee;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative; /* Asegura el contexto para el dropdown */
+}
+
+nav a, .dropdown {
+    display: flex; 
+    align-items: center; 
+    height: 100%;
+    padding: 0 20px; 
+    text-decoration: none;
+    color: #303c48;
+    cursor: pointer;
+    font-size: large;
+    box-sizing: border-box;
+    position: relative; 
+    transition: transform 0.5s ease;
+}
+
+nav a:hover {
+    color: #20aec8;
+    transform: scale(1.1);
+}
+
+.dropdown {
+    position: relative; /* Asegura el contexto para el contenido desplegable */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    left: 0; 
+    top: 100%; 
+    transform: translateX(-50%); 
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.5s ease;
+    z-index: 101; 
+    text-align: center; 
+}
+
+.dropdown-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #b0c745; 
+    color: #e2001a;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1; 
+    pointer-events: auto; 
+    animation: fadeInDropdown 1.1s forwards;
+}
+
+@keyframes fadeInDropdown {
+    from {
+        opacity: 0;
+        transform: translateY(10px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

@@ -1,0 +1,32 @@
+
+
+<div class="wrapper">
+    <div class="site-branding">
+        <div class="site-logo">
+            <a href="https://ludenatura.com/" class="custom-logo-link" rel="home" aria-current="page">
+                <img src="https://ludenatura.com/wp-content/uploads/2021/11/logoludenatura-1-transparente.png" class="custom-logo" alt="Ludenatura" decoding="async" fetchpriority="high"></a>	          		
+        </div>
+        <div id="site-header">
+            <p class="site-title">
+                <a href="https://ludenatura.com/" rel="home">Ludenatura</a>
+            </p>
+        </div>
+    </div>
+</div>
+<nav>
+    <a id="home-anchor" routerLink="">Campamentos</a>
+    <div class="dropdown">
+        <a id="talleres-anchor" routerLink="">Talleres</a>
+        <div class="dropdown-content">
+            <a *ngFor="let opcion of talleresOpciones">{{ opcion }}</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <a id="actividades-anchor" routerLink="">Actividades</a>
+        <div class="dropdown-content">
+            <a *ngFor="let opcion of actividadesOpciones" href="#">{{ opcion }}</a>
+        </div>
+    </div>
+    <a id="laHoyilla-anchor" routerLink="">La Hoyilla</a>
+    <a id="Contacto-anchor" routerLink="">Contacto</a>
+</nav>
