@@ -1,0 +1,61 @@
+<app-fondo>
+    <section class="section-campament">
+        <a>CAMPAMENTOS</a>
+        <div class="photo-gallery">
+            <article *ngFor="let foto of photos1" class="photos">
+                <img class="images" alt="image-campament" [src]="foto">
+            </article>
+        </div>
+        <div class="text-and-photos">
+            <div class="container-1">
+                <ul>
+                    <h1>En Ludenatura proponemos la realización de campamentos con el fin de disfrutar de unos días de convivencia<br><br></h1>
+                    <p>Los objetivos que nos planteamos en la realización de un campamento son:<br></p>
+                    <li>Potenciar los valores de colaboración, respeto y tolerancia.<br></li>
+                    <li>Trabajar el medio natural y cultural.<br></li>
+                    <li>Establecer relaciones de convivencia.<br></li>
+                    <li>Aprender del medio que nos rodea y apreciar las posibilidades de ocio que el entorno natural nos ofrece.<br></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-and-photos">
+            <div class="container-2">
+                <ul>
+                    <p>Algunas de las actividades que ofrecemos son:<br><br></p>
+                    <li>Talleres medioambientales.<br></li>
+                    <li>Senderismo interpretativo.<br></li>
+                    <li>Gymkhana.<br></li>
+                    <li>Juegos de pista y rastreo.<br></li>
+                    <li>Bailes coreografía.<br></li>
+                    <li>Manualidades con material reciclado y ecológico.<br></li>
+                    <li>Talleres culinarios.<br></li>
+                    <li>Deportes canarios.<br></li>
+                    <li>Visitas a huertos ecológicos.<br></li>
+                    <li>Juegos alternativos.<br></li>
+                    <li>Discotecas.<br></li>
+                    <li>Juegos nocturnos.<br></li>
+                    <li>Visionado de estrellas.<br></li>
+                </ul>
+                <div class="photo-gallery2">
+                    <img class="activity-img" alt="image-campament" [src]="currentActivity" #activityImg>
+                </div>
+            </div>
+        </div>
+        <div class="text-and-photos">
+            <div class="container-3">
+                <p class="lugares">Las instalaciones donde realizamos los campamentos:</p>
+                <div class="fila-lugares">
+                    <div *ngFor="let content of lugares" class="lugar">
+                        <p class="campamento-name">{{ content.title }}</p>
+                        <img class="campamento-img" alt="{{ content.title }}" [src]="content.image">
+                        <p class="campamento-name2">{{ content.sitio }}</p>
+                    </div>
+                    <div class="maps">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </app-fondo>
+    

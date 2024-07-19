@@ -1,0 +1,81 @@
+
+
+.activities-body {
+    display: block;
+    margin-top: 80px;
+    padding-bottom: 50px;
+    justify-content: center; 
+    text-align: center;
+}
+
+.activities-body a{
+    font-size: 1.7rem;
+    color: #9BAE45;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.5s ease;
+}
+.activities-body p{
+    font-size: 1.7rem;
+    color: #9BAE45;
+    font-weight: bold;
+    text-decoration: none;
+    cursor:default;
+}
+
+.photos-activities {
+    display: flex;
+    justify-content: center;
+}
+
+.activity img:hover{
+    transform: scale(1.02);
+}
+
+
+.activity {
+    margin: 100px 50px;
+
+}
+
+.activity img{
+    width: 300px;
+    height: 200px;
+    cursor: pointer;
+    border-radius: 5%;
+    transition: transform 0.5s ease;
+}
+
+.albergue-photo{
+    transition: transform 0.5s ease;
+}
+
+.albergue-photo img:hover{
+    transform: scale(1.01);
+}
+
+.albergue-photo img{
+    width: 70%;
+    height: 70%;
+    cursor: pointer;
+    border-radius: 2%;
+    transition: transform 0.5s ease;
+}
+
+.albergue-photo a{
+    display: block;
+    margin-top: 10px ;
+    transition: transform 0.5s ease;
+}
+
+.activity a {
+    display: block;
+    margin-top: 10px;
+    size: 1.5rem;
+}
+
+.activities-body a:hover{
+    color: #20aec8;
+    transform: scale(1.12);
+}
