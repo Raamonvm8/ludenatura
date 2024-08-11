@@ -1,1 +1,2 @@
-Pasarme nuevas im‡genes Homepage (campamentos, talleres, actividades)
+-Pasarme nuevas im‡genes Homepage (campamentos, talleres, actividades)
+- Confirmar ubicaciones de los sitios en /campamentos
