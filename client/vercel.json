@@ -1,0 +1,16 @@
+{
+    "builds": [
+      {
+        "src": "src/**/*.ts",
+        "use": "@vercel/node",
+        "config": {
+          "distDir": "dist/ludenatura"
+        }
+      }
+    ],
+    "routes": [
+      { "handle": "filesystem" },
+      { "src": "/.*", "dest": "/index.html" }
+    ]
+  }
+  
