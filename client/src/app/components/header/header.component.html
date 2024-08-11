@@ -16,9 +16,10 @@
 <nav>
     <a class="clickable" id="home-anchor" routerLink="/campamentos">Campamentos</a>
     <div class="dropdown">
-        <a id="talleres-anchor" routerLink="">Talleres</a>
+        <a id="talleres-anchor" routerLink="/talleres">Talleres</a>
         <div class="dropdown-content">
-            <a *ngFor="let opcion of talleresOpciones">{{ opcion }}</a>
+            <a *ngFor="let opcion of talleresOpciones; let i = index" 
+               [routerLink]="['/talleres', opcion.toLowerCase(), i]">{{ opcion }}</a>
         </div>
     </div>
     <div class="dropdown">

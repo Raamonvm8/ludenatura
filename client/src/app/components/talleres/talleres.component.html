@@ -1,0 +1,63 @@
+<app-fondo [section]="title">
+    <h1 class="title">Escoge entre todos los talleres que ofrecemos:</h1>
+    <nav class="navbar">
+        <article *ngFor="let item of talleres; let i = index" 
+                 [ngClass]="{'selected': selectedIndex === i}" 
+                 class="types-talleres">
+                 <a (click)="showHide(i)" [routerLink]="['./', item.title.toLowerCase(), i]">
+                    <img alt="{{item.title}}" [src]="item.image">
+                    <span>{{item.title}}</span>
+                  </a>
+        </article>
+    </nav>
+    <div class="container">
+        <div class="section-talleres" *ngIf="selectedIndex===-1">
+            <!--<article *ngFor="let item of talleres" class="principal-talleres">
+                <img alt="img" src="../../../assets/talleres/no-photo.jpg">
+             </article> -->
+             <article class="principal-talleres1">
+                <img alt="img" src="../../../assets/talleres/no-photo.jpg">
+                <img alt="img" src="../../../assets/talleres/no-photo.jpg">
+                <img alt="img" src="../../../assets/talleres/no-photo.jpg">
+             </article>
+
+             <div class="talleres-group">
+                
+                <div class="taller">
+                    <h2>Talleres para mujeres:</h2>
+                    <ul>
+                        <li>Proyecto de Igualdad “Alas”</li>
+                        <li>Proyecto de Empoderamiento</li>
+                        <li>Jornadas de bienestar y autocuidado</li>
+                        <li>Retiros de crecimiento</li>
+                    </ul>
+                </div>
+                <div class="taller">
+                    <h2>Noches de jóvenes:</h2>
+                    <ul>
+                        <li>Cócteles sin alcohol</li>
+                        <li>Lettering (diseño de letras)</li>
+                        <li>Charlas de sexualidad</li>
+                        <li>Cosplay</li>
+                        <li>Escritura creativa</li>
+                        <li>Interpretación</li>
+                    </ul>
+                </div>
+            </div>
+        
+            <div class="otros-talleres">
+                <h2>Otros talleres:</h2>
+                <ul>
+                    <li>Taller de Tai-Chí</li>
+                    <li>Guitarra y Timple</li>
+                    <li>Oficios artesanales (Cerámica creativa, jabones artesanales, rosetas artesanales, técnica de pintura en piedras, técnica del trencadís.)</li>
+                    <li>Fotografía</li>
+                    <li>Ajedrez</li>
+                    <li>Baile canario</li>
+                </ul>
+            </div>
+             
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</app-fondo>

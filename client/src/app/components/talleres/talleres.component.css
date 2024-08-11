@@ -1,0 +1,174 @@
+.title {
+    margin-left: 0px;
+    padding: 20px;
+    color: #b0c745;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    font-family: 'Khand', sans-serif;
+    font-size: 1.5rem;
+}
+
+
+.navbar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 80px; 
+    width: 80%;
+    margin: 10px auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for the background */
+    border-radius: 5px;
+
+}
+
+.navbar .types-talleres {
+    background-color: transparent;
+    padding: 10px 40px;
+    border-radius: 10px;
+}
+
+.types-talleres {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin: 0 20px;
+    text-align: center; 
+    position: relative; 
+    
+}
+
+.types-talleres a {
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    color: #b0c745;
+    text-shadow: 0px 2px 6px rgba(62, 62, 62, 0.2);
+}
+
+.navbar img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px; 
+    border-radius: 5px;
+}
+
+.navbar span {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.types-talleres::after {
+    content: "";
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: -50px; /* Adjust this value for desired gap */
+    width: 2px; /* Line width */
+    background-color: rgba(0, 0, 0, 0.1); /* Line color */
+}
+
+/* Remove the separator line from the last item */
+.types-talleres:last-child::after {
+    display: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 80px; 
+    width: 80%;
+    margin: 10px auto; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for the background */
+    border-radius: 5px;
+}
+
+
+.navbar .types-talleres.selected {
+    background-color: #b0c745;
+}
+
+.navbar .types-talleres.selected a{
+    color: #e2001a;
+}
+
+
+.principal-talleres1 {
+    display: flex; 
+    justify-content: space-between; 
+    gap: 90px; 
+    margin: 50px;
+}
+
+.principal-talleres1 img {
+    width: 250px; 
+    height: auto; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination-controls button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.pagination-controls span {
+    font-size: 1rem;
+}
+
+.section-talleres {
+    justify-content: left;
+    padding: 20px;
+    font-family: 'Khand', sans-serif;
+    color: rgb(79, 82, 101);
+}
+
+.talleres-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    gap: 20px;
+}
+
+.taller {
+    width: 30%; /* Ajusta este valor según el espacio disponible */
+}
+
+.taller h2 {
+    color: #b0c745;
+    margin-bottom: 10px;
+}
+
+.taller ul {
+    padding-left: 20px;
+    text-align: left;
+}
+
+.otros-talleres {
+    margin-top: 30px;
+}
+
+.otros-talleres h2 {
+    color: #b0c745;
+    margin-bottom: 10px;
+}
+
+.otros-talleres ul {
+    text-align: left;
+    padding-left: 20px;
+    column-count: 2; /* Divide los elementos en dos columnas */
+    column-gap: 30px; /* Ajusta el espacio entre columnas */
+}

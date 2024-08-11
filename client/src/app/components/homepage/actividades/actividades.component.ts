@@ -27,4 +27,11 @@ export class ActividadesComponent {
     });
   }
 
+  redirectToTalleres(){
+    this.router.navigate(['/talleres']).then(() => {
+      window.scrollTo({ top:0, behavior: 'smooth' })
+    });
+
+  }
+
 }

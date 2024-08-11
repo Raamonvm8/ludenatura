@@ -1,0 +1,79 @@
+.section-manualidades {
+    text-align: center;
+    padding: 15px;
+    font-family: 'Khand', sans-serif;
+    font-size: 1.2rem;
+    color: rgb(79, 82, 101);
+}
+
+.section-manualidades h1 {
+    color: #b0c745;
+}
+
+.section-manualidades p {
+    display: flex;
+    flex: 1;
+    margin: 0;
+    padding: 20px;
+    border: 1px solid #b0c745;
+    box-shadow: #ccc;
+    border-radius: 8px;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra alrededor de los párrafos */
+    background-color: rgba(247, 232, 101, 0.3);
+}
+
+.texts-part {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 40px; /* Espacio entre los párrafos */
+    padding: 35px;
+}
+
+.images-creativas {
+    display: flex;
+    padding: 35px;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.creativas {
+    padding: 30px;
+}
+
+.tematicas {
+    padding: 30px;
+    text-align: left;
+}
+
+.tematicas p {
+    text-align: center;
+}
+
+.tematicas-content {
+    display: flex;
+    gap: 90px;
+    margin-top: 50px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.images-tematicas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.creativas img,
+.tematicas img {
+    width: 230px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #b0c745;
+}

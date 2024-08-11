@@ -1,6 +1,5 @@
-<app-fondo>
+<app-fondo [section]="title">
     <section class="section-campament">
-        <a>CAMPAMENTOS</a>
         <div class="photo-gallery">
             <article *ngFor="let foto of photos1" class="photos">
                 <img class="images" alt="image-campament" [src]="foto">
@@ -18,6 +17,7 @@
                 </ul>
             </div>
         </div>
+        
         <div class="text-and-photos">
             <div class="container-2">
                 <ul>
@@ -42,18 +42,49 @@
             </div>
         </div>
         <div class="text-and-photos">
+            <h1 class="lugares">Las instalaciones donde realizamos los campamentos:</h1>
             <div class="container-3">
-                <p class="lugares">Las instalaciones donde realizamos los campamentos:</p>
                 <div class="fila-lugares">
                     <div *ngFor="let content of lugares" class="lugar">
                         <p class="campamento-name">{{ content.title }}</p>
-                        <img class="campamento-img" alt="{{ content.title }}" [src]="content.image">
-                        <p class="campamento-name2">{{ content.sitio }}</p>
-                    </div>
-                    <div class="maps">
-
+                        <div class="flip-container">
+                            <div class="flipper">
+                              <div class="front">
+                                <img class="campamento-img" alt="{{ content.title }}" [src]="content.image">
+                              </div>
+                              <div class="back">
+                                <img class="campamento-img" alt="{{ content.title }} back" [src]="content.imageBack">
+                              </div>
+                            </div>
+                        </div>                        
+                        <p class="campamento-name">{{ content.sitio }}</p>
                     </div>
                 </div>
+                <div class="map-container">
+                <!-- <app-mapa></app-mapa> -->
+                </div>
+            </div>
+        </div>
+        <div class="text-and-photos">
+            <h1 class="lugares">¡Pídenos tu campamento sin ningún compromiso!</h1>
+            <div class="container-4">
+                <ul>
+                    <!-- <p class="centrado">A través de:<br></p> -->
+                    <div class="photo-gallery3">
+                        <article class="photos-info">
+                            <a href="mailto:ludenatura@ludenatura.com">
+                                <img class="info" alt="image-campament" src="../../../assets/campamentos/mail-99218_1280.png">
+                                <span>ludenatura&#64;ludenatura.com</span>
+                            </a>
+                        </article>
+                        <article class="photos-info">
+                            <a href="tel:+34600420871">
+                                <img class="info" alt="image-campament" src="../../../assets/campamentos/phone-99276_1280.png">
+                                <span>600420871</span>
+                            </a>
+                        </article>
+                    </div>
+                </ul>
             </div>
         </div>
     </section>
