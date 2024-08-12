@@ -125,3 +125,40 @@ nav a:hover {
     }
 }
 
+@media (max-width: 1024px) and (min-width: 600px) {
+    .site-title {
+        font-size: 28px; /* Tamaño de fuente más pequeño */
+        letter-spacing: 8px; /* Ajusta el espaciado */
+    }
+
+    nav a, .dropdown {
+        padding: 10px 15px;
+        font-size: 18px; /* Tamaño de fuente ajustado */
+    }
+
+    .dropdown-content {
+        min-width: 150px; /* Ajusta el ancho mínimo del dropdown */
+    }
+}
+
+/* Estilos para móviles (menos de 600px) */
+@media (max-width: 600px) {
+    .site-title {
+        font-size: 22px; /* Tamaño de fuente aún más pequeño */
+        letter-spacing: 5px; /* Ajusta el espaciado */
+    }
+
+    nav {
+        flex-direction: column; /* Muestra los elementos de navegación en columna */
+        height: auto; /* Ajusta la altura automáticamente */
+    }
+
+    nav a, .dropdown {
+        padding: 8px 10px; /* Ajusta el padding */
+        font-size: 16px; /* Tamaño de fuente reducido */
+    }
+
+    .dropdown-content {
+        min-width: 100%; /* Hace que el dropdown use todo el ancho disponible */
+    }
+}
