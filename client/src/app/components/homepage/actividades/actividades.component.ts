@@ -34,4 +34,19 @@ export class ActividadesComponent {
 
   }
 
+  redirectToActividades(){
+    this.router.navigate(['/actividades']).then(() => {
+      window.scrollTo({ top:0, behavior: 'smooth' })
+    });
+
+  }
+
+  redirectToHoyilla(){
+    this.router.navigate(['/lahoyilla']).then(() => {
+      window.scrollTo({ top:0, behavior: 'smooth' })
+    });
+
+  }
+
+
 }

@@ -23,11 +23,12 @@
         </div>
     </div>
     <div class="dropdown">
-        <a id="actividades-anchor" routerLink="">Actividades</a>
+        <a id="actividades-anchor" routerLink="/actividades">Actividades</a>
         <div class="dropdown-content">
-            <a *ngFor="let opcion of actividadesOpciones" href="#">{{ opcion }}</a>
+            <a *ngFor="let opcion of actividadesOpciones; let i = index" 
+               [routerLink]="['/actividades', opcion.toLowerCase(), i]">{{ opcion }}</a>
         </div>
     </div>
-    <a id="laHoyilla-anchor" routerLink="">La Hoyilla</a>
-    <a id="Contacto-anchor" routerLink="">Contacto</a>
+    <a id="laHoyilla-anchor" routerLink="/lahoyilla">La Hoyilla</a>
+    <a id="Contacto-anchor" routerLink="/contacto">Contacto</a>
 </nav>

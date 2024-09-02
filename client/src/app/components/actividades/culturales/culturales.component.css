@@ -1,0 +1,92 @@
+
+.section-cultural {
+    text-align: center;
+    padding: 15px;
+    font-family: 'Khand', sans-serif;
+    font-size: 1.2rem;
+    color: rgb(79, 82, 101);
+    width: 70rem;
+}
+
+.section-cultural h1 {
+    color: #b0c745;
+}
+
+.container-culturales {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin: 0 60px;
+}
+
+.culturales {
+    display: flex;
+    flex-direction: column;
+}
+
+.culturales p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 30px;
+    
+}
+
+
+.container-culturales ul li {
+    padding: 5px 0;
+    text-align: left;
+}
+
+ul li:hover {
+    color: #b0c745; 
+    cursor:default;
+}
+
+.images-culturales {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    
+}
+
+.culturales {
+    margin-top: 3.5rem;
+}
+
+.culturales img {
+    width: 230px;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #b0c745;
+}
+
+.text-content{
+    justify-content: center;
+    margin-right: 80px;
+}
+
+.container-explicativo {
+    padding: 5px;
+    text-align: center;
+    height: 150px;
+    border-radius: 5px;
+    margin: 0;
+    transition: opacity 0.9s ease-in-out;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.container-explicativo p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.container-explicativo.ng-star-inserted {
+    opacity: 1; /* Hace que aparezca la descripción suavemente */
+}
+
+

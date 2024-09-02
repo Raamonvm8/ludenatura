@@ -1,0 +1,26 @@
+<section class="info-hostal">
+    
+    <ul>
+        <li>50 plazas</li>
+        <li>Habitaciones con baño</li>
+        <li>Habitaciones privadas y compartidas</li>
+        <li>Wifi</li>
+        <li>Terrazas externas</li>
+        <li>Aparcamiento</li>
+        <li>Cocina propia</li>
+    </ul>
+    <div class="abajo">
+        <div class="images">
+            <div class="arrow left" (click)="prevImage()">&#9664;</div>
+            <div *ngFor="let img of images; let i = index" class="image-container">
+                <img [src]="img" [ngClass]="{'active': i === currentImageIndex}" alt="Hostal Image">
+            </div>
+            <div class="arrow right" (click)="nextImage()">&#9654;</div>
+        </div>
+        <div class="thumbnail-gallery">
+            <img *ngFor="let img of images; let i = index" [src]="img" (click)="setCurrentImage(i)" [class.selected]="i === currentImageIndex" alt="Thumbnail">
+        </div>
+    </div>
+    
+
+</section>

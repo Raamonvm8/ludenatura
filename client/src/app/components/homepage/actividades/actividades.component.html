@@ -9,13 +9,13 @@
             <img alt="foto talleres" title="Talleres" [src]="talleres">
             <a routerLink="/talleres">Talleres</a>
         </div>
-        <div class="activity">
+        <div (click)="redirectToActividades()" class="activity">
             <img alt="foto actividades" title="Actividades" [src]="actividades">
             <a>Actividades</a>
         </div>
     </section>
 
-    <div class="albergue-photo">
+    <div (click)="redirectToHoyilla()" class="albergue-photo">
         <img alt="foto albergue" title="Albergue" [src]="albergue">
         <a>Albergue La Hoyilla</a>
     </div>

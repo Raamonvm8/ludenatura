@@ -1,0 +1,35 @@
+.clientes-section {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    background-color: white;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+  
+.clientes-section h2 {
+font-size: 2rem;
+margin-bottom: 20px;
+color: #b0c745;
+}
+
+.clientes-section ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.clientes-section li {
+font-size: 1.2rem;
+padding: 10px 0;
+color: #555;
+border-bottom: 1px solid #ddd;
+}
+
+.clientes-section li:last-child {
+border-bottom: none;
+}
+  

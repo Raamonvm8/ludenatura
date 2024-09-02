@@ -1,0 +1,28 @@
+.title {
+    color: #b0c745;
+    padding: 20px;
+}
+
+.client-map {
+    display: flex; /* Flexbox para distribuir los componentes horizontalmente */
+    justify-content: space-between; /* Asegura que los componentes estén separados */
+    align-items: center; /* Centra verticalmente */
+    height: 100%; /* Asegura que los componentes ocupen la altura del contenedor */
+    padding: 20px; /* Espaciado alrededor de los componentes */
+  }
+  
+  .client-map > app-clientes, 
+  .client-map > app-map {
+    width: 50%; /* Cada componente ocupa el 50% del ancho */
+    display: flex;
+    flex-direction: column; /* Para centrar el contenido dentro de cada componente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    text-align: center; /* Alinea el texto al centro */
+  }
+  .client-map > app-clientes, 
+  .client-map > app-map {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  

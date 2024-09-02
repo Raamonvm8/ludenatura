@@ -12,6 +12,6 @@ import { RouterLink } from '@angular/router';
 export class HeaderComponent {
 
   talleresOpciones = ['Manualidades', 'Animación', 'Mayores', 'Charlas'];
-  actividadesOpciones = ['Medioambientales', 'Deportivas & Aventura', 'De una jornada'];
+  actividadesOpciones = ['Medioambientales', 'Deportivas & Aventura', 'Culturales'];
   
 }

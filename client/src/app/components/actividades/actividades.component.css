@@ -1,6 +1,7 @@
 .title {
     margin-left: 0px;
     padding: 20px;
+    margin-top: 20px;
     color: #b0c745;
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     font-family: 'Khand', sans-serif;
@@ -21,7 +22,7 @@
     border-radius: 5px;
 }
 
-.types-talleres {
+.types-actividades {
     flex: 1; /* Permite que los elementos se distribuyan uniformemente */
     display: flex;
     flex-direction: column; 
@@ -31,7 +32,7 @@
     position: relative; 
 }
 
-.types-talleres::after {
+.types-actividades::after {
     content: "";
     position: absolute;
     top: 10%;
@@ -41,17 +42,17 @@
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-.types-talleres:last-child::after {
+.types-actividades:last-child::after {
     display: none; /* Asegúrate de que la línea no aparezca en el último elemento */
 }
 
-.navbar .types-talleres {
+.navbar .types-actividades {
     background-color: transparent;
     padding: 10px 40px;
     border-radius: 10px;
 }
 
-.types-talleres a {
+.types-actividades a {
     text-decoration: none;
     font-family: 'Arial', sans-serif;
     color: #b0c745;
@@ -59,8 +60,8 @@
 }
 
 .navbar img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 120px;
     margin-bottom: 10px; 
     border-radius: 5px;
 }
@@ -85,25 +86,25 @@
 }
 
 
-.navbar .types-talleres.selected {
+.navbar .types-actividades.selected {
     background-color: #b0c745;
     margin-right: 10px; /* Deja margen para la línea divisoria */
     margin-left: 10px;  /* Deja margen para la línea divisoria */
 }
 
-.navbar .types-talleres.selected a{
+.navbar .types-actividades.selected a{
     color: #e2001a;
 }
 
 
-.principal-talleres1 {
+.actividadesimg {
     display: flex; 
     justify-content: space-between; 
     gap: 90px; 
     margin: 50px;
 }
 
-.principal-talleres1 img {
+.actividadesimg img {
     width: 250px; 
     height: auto; 
     border-radius: 5px; 
@@ -129,48 +130,34 @@
     font-size: 1rem;
 }
 
-.section-talleres {
-    justify-content: left;
+.section-actividades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     font-family: 'Khand', sans-serif;
     color: rgb(79, 82, 101);
 }
 
-.talleres-group {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 60px;
-    gap: 20px;
+.section-actividades h1{
+    margin-bottom: 50px;
+    color: #b0c745;;
 }
 
-.taller {
-    width: 30%; /* Ajusta este valor según el espacio disponible */
+#h1 {
+    margin-bottom: 50px;
+    color: #b0c745;;
 }
 
-.taller h2 {
-    color: #b0c745;
+.section-actividades ul{
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-size: 1.5rem;
+}
+
+.section-actividades li{
     margin-bottom: 10px;
 }
 
-.taller ul {
-    padding-left: 20px;
-    text-align: left;
-}
-
-.otros-talleres {
-    margin-top: 30px;
-    justify-content: center;
-    
-}
-
-.otros-talleres h2 {
-    color: #b0c745;
-    margin-bottom: 10px;
-}
-
-.otros-talleres ul {
-    text-align: left;
-    padding-left: 20px;
-    column-count: 2; /* Divide los elementos en dos columnas */
-    column-gap: 30px; /* Ajusta el espacio entre columnas */
-}

@@ -1,0 +1,54 @@
+<section class="section-deportes">
+    <h1>Deportivas & Aventura</h1>
+    <div class="deportes">
+       <p>Juegos de Aventura</p>
+        <div class="container-deportes">
+            <div class="images-deportes">
+                <img src="../../../../assets/talleres/no-photo.jpg">
+                <img src="../../../../assets/talleres/no-photo.jpg">
+                <img src="../../../../assets/talleres/no-photo.jpg">
+                <img src="../../../../assets/talleres/no-photo.jpg">
+            </div>
+            <div class="text-content">
+                <ul>
+                
+                    <li (mousemove)="showDescription(descripRutas)" (mouseleave)="clearDescription()">Rutas por cumbres y barrancos</li>
+                    <li (mouseenter)="showDescription(descripEscalada)" (mouseleave)="clearDescription()">Iniciación a la escalada</li>
+                    <li (mouseenter)="showDescription(descripSupervivencia)" (mouseleave)="clearDescription()">Orientación en la naturaleza y supervivencia</li>
+                    <li (mouseenter)="showDescription(descripPistaRastreo)">Pista y rastreo</li>
+                    <li (mouseenter)="showDescription(descripJuegosCanarios)" (mouseleave)="clearDescription()">Juegos tradicionales canarios</li>
+                    
+                </ul>
+                <div class="container-explicativo">
+                    <p>{{description}}</p>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+
+
+    </div>
+    <div class="deportes">
+        <p>Juegos Deportivos en la Playa</p>
+         <div class="container-deportes">
+            <div class="text-content">
+                <ul>
+                    <li>Voleibol playa</li>
+                    <li>Aerobic playa</li>
+                    <li>Fútbol playa</li>
+                    <li>Bádminton</li>
+                    <li>Kayac</li>
+                    <li>Vela</li>          
+                </ul>
+            </div>
+            <div class="images-deportes">
+                <img src="../../../../assets/talleres/no-photo.jpg">
+                <img src="../../../../assets/talleres/no-photo.jpg">
+            </div>
+            
+         </div>
+ 
+     </div>
+</section>

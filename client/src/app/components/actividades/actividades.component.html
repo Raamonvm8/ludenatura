@@ -1,0 +1,40 @@
+<app-fondo [section]="title">
+    <h1 class="title">¡Disfruta de nuestros servicios organizando jornadas de 1 día!</h1>
+    <nav class="navbar">
+        <article *ngFor="let item of talleres; let i = index" 
+            [ngClass]="{'selected': selectedIndex === i}" 
+            class="types-actividades">
+            <a (click)="showHide(i)" [routerLink]="['./', item.title.toLowerCase(), i]">
+                <img alt="{{item.title}}" [src]="item.image">
+                <span>{{item.title}}</span>
+            </a>
+</article>
+    </nav>
+    <div class="container">
+        <div class="section-actividades" *ngIf="selectedIndex===-1">
+            <!--<article *ngFor="let item of talleres" class="principal-talleres">
+                <img alt="img" src="../../../assets/talleres/no-photo.jpg">
+             </article> -->
+            <article class="actividadesimg">
+            <img alt="img" src="../../../assets/talleres/no-photo.jpg">
+            <img alt="img" src="../../../assets/talleres/no-photo.jpg">
+            <img alt="img" src="../../../assets/talleres/no-photo.jpg">
+            </article>
+
+            <h1>Lugares dónde realizamos los juegos:</h1>
+
+            <ul>
+                <li>Playa de las Canteras - LAS PALMAS DE GRAN CANARIA</li>
+                <li>Parque de las Rehoyas - LAS PALMAS DE GRAN CANARIA</li>
+                <li>San José del Álamo - LAS PALMAS DE GRAN CANARIA</li>
+                <li>Área recreativa Laguna de Valleseco - VALLESECO</li>
+                <li>Área recreativa Santa Cristina - SANTA MARÍA DE GUÍA</li>
+                <li>Finca de Osorio - TEROR</li>
+                <li>Área recreativa de Tamadaba - ARTENARA</li>
+            </ul>
+             
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+    <h1 class="title">ESTAS ACTIVIDADES SE PUEDEN REALIZAR EN EL PROPIO CENTRO ESCOLAR</h1>
+</app-fondo>
