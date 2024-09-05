@@ -1,2 +1,10 @@
--Pasarme nuevas imágenes Homepage (campamentos, talleres, actividades)
+- Pasarme todas las imágenes organizadas en carpetas
 - Confirmar ubicaciones de los sitios en /campamentos
+- Corregir ortografía si todos los nombres son correctos
+- Decirme otros tipos de clientes en el apartado La Hoyilla
+- Hacerme las descripciones en la sección Actividades (
+
+
+Posibles actualizaciones:
+- Reservar estancia en La Hoyilla a través de su sección.
+- Formulario para solicitar un taller.
