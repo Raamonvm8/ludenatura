@@ -98,12 +98,19 @@
     color: #b0c745;
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
+.lugares2 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #b0c745;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
 
 .fila-lugares {
     display: flex;
     overflow-x: auto;
     white-space: nowrap;
-    padding: 1rem;
+    padding: 0 30px;
     gap: 1.5rem;
     margin-right: 50px;
     margin-bottom: 30px;
@@ -244,7 +251,274 @@
   .back {
     transform: rotateY(180deg);
   }
+
+.text-and-photos > app-form {
+    display: flex;
+    justify-content: center;
+}
   
+
+
+
+
+/* Modal Background */
+.modal {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    max-width: 600px; 
+    border-radius: 10px;
+    margin: 30px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.modal-content h2{
+    color: #b0c745;
+    text-align: center;
+    margin: 0;
+}
+.modal-content h3{
+    text-align: center;
+    font-size: 17px;
+}
+
+/* Show the modal when active */
+.modal.show .modal-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form Layout */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Form Row */
+.form-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+
+/* Form Group */
+.form-group {
+    flex: 1; 
+    min-width: 150px; 
+}
+
+/* Label and Input */
+.select-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 17px;
+    text-align: center;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+
+}
+
+/* Estilos para el select */
+.form-group select {
+    display: block;
+    margin: 0 auto;
+    padding: 8px;
+    width: 40%; 
+    font-size: 16px; 
+    border: 2px solid #b0c745;
+    border-radius: 25px; 
+    background-color: #f7f7f7; 
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+    appearance: none;
+    text-align: center; 
+}
+/* Icono de flecha personalizado para el select */
+.form-group select::-ms-expand {
+    display: none; 
+}
+
+.form-group select {
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23b0c745" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* Flecha abajo */
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center; 
+    background-size: 16px; 
+}
+.form-group select:hover {
+    background-color: #e8e8e8; 
+    border-color: #8fb838; 
+}
+
+.form-group select:focus {
+    outline: none; 
+    border-color: #8fb838; 
+    box-shadow: 0 0 8px rgba(176, 199, 69, 0.6);
+}
+
+
+/* Select Group (extra fields) */
+.select-group {
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    background-color: #20aec8;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.custom-dropdown button{
+    margin: 0;
+    border: 1px solid #888;
+}
+
+button:hover {
+    color: white;
+    background-color: #25cfed;
+}
+
+
+.required {
+    color: red;
+}
+
+/* Dropdown Styles */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%; 
+}
+
+.dropdown-toggle {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    max-height: 200px; /* Ajusta el tamaño según sea necesario */
+    overflow-y: auto;
+    margin-top: 1px; /* Espacio entre el botón y el menú */
+    box-sizing: border-box;
+}
+
+.dropdown-menu.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown-menu label {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 100%; /* Asegura que el label ocupe el 100% del ancho disponible */
+    padding: 8px 10px;
+    cursor: pointer;
+    box-sizing: border-box; /* Asegura que el padding y border estén incluidos en el ancho total */
+    margin: 0;
+    border-bottom: 1px solid #ddd; 
+    text-align: left; /* Alinea el texto a la izquierda */
+    white-space: nowrap; /* Evita el ajuste de texto en varias líneas */
+}
+
+.dropdown-menu input[type="checkbox"] {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-right: -80px; /* Espacio entre el checkbox y el texto */
+}
+
+.dropdown-menu label {
+    flex-direction: row-reverse; /* Invierte el orden de los elementos */
+}
+
+.error {
+    color: #d9534f; 
+    text-align: center;
+    font-size: 1.20rem; 
+    margin-top: 0.25rem; /* Espacio arriba del mensaje */
+    display: block; /* Asegura que el mensaje esté en una línea separada */
+ }
+  
+ .form-control.invalid {
+    border: 1px solid red;
+  }
+
+  .observaciones {
+    height: 70px; /* Altura fija para el campo */
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding esté incluido en la altura total */
+    padding: 10px; /* Espacio interior para el texto */
+    text-align: left; /* Alinea el texto a la izquierda */
+    vertical-align: top; /* Alinea el texto verticalmente al principio */
+}
+
+.observaciones-label {
+    text-align: center; /* Alinea la etiqueta a la izquierda */
+}
 
 
 /* Estilos para tabletas (pantallas de entre 600px y 1024px) */

@@ -34,9 +34,8 @@
     text-align: left;
 }
 
-ul li:hover {
+.text-content ul li:hover {
     color: #b0c745; 
-    cursor:default;
 }
 
 .images-deportes {
@@ -55,6 +54,11 @@ ul li:hover {
 
 .text-content{
     justify-content: center;
+    cursor:default;
+}
+.text-content1{
+    justify-content: center;
+    cursor:default;
 }
 
 .container-explicativo {
@@ -77,5 +81,5 @@ ul li:hover {
 }
 
 .container-explicativo.ng-star-inserted {
-    opacity: 1; /* Hace que aparezca la descripción suavemente */
+    opacity: 1; 
 }

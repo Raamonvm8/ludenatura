@@ -3,17 +3,22 @@
     <div class="medioambiente">
        <!-- <p>Descripcion</p> -->
         <div class="container-medioambiental">
-            <ul>
-                
-                <li>Plantación de un árbol y reforestación</li>
-                <li>Senderismo interpretativo</li>
-                <li>Visitas a viveros pedagógicos</li>
-                <li>Construcción de un huerto escolar</li>
-                <li>Talleres de reciclaje y art-land</li>
-                <li>Cuaderno de campo y herbarios</li>
-                <li>Estudio de la Laurisilva</li>
-                <li>Juegos en la naturaleza</li>
-            </ul>
+            <div class="text-content">
+                <ul>
+                    <li (mousemove)="showDescription(descripArbol)" (mouseleave)="clearDescription()">Plantación de un árbol y reforestación</li>
+                    <li (mousemove)="showDescription(descripSender)" (mouseleave)="clearDescription()">Senderismo interpretativo</li>
+                    <li (mousemove)="showDescription(descripViveros)" (mouseleave)="clearDescription()">Visitas a viveros pedagógicos</li>
+                    <li (mousemove)="showDescription(descripConstr)" (mouseleave)="clearDescription()">Construcción de un huerto escolar</li>
+                    <li (mousemove)="showDescription(descripArt)" (mouseleave)="clearDescription()">Talleres de reciclaje y art-land</li>
+                    <li (mousemove)="showDescription(descripCamposHer)" (mouseleave)="clearDescription()">Cuaderno de campo y herbarios</li>
+                    <li (mousemove)="showDescription(descripLaurisilva)" (mouseleave)="clearDescription()">Estudio de la Laurisilva</li>
+                    <li (mousemove)="showDescription(descripJuegosNaturaleza)" (mouseleave)="clearDescription()">Juegos en la naturaleza</li>
+                </ul>
+                <div class="container-explicativo">
+                    <p>{{description}}</p>
+                </div>
+            </div>
+            
             <div class="images-medioambiental">
                 <img src="../../../../assets/talleres/no-photo.jpg">
                 <img src="../../../../assets/talleres/no-photo.jpg">

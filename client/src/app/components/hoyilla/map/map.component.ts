@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './map.component.html',
   styleUrl: './map.component.css'
 })
-export class MapComponent implements OnInit{
-  constructor() { }
+export class MapComponent {
+  constructor() {}
 
-  ngOnInit(): void {
+  /*ngOnInit(): void {
     this.setGoogleMapsLink();
   }
 
@@ -18,36 +18,18 @@ export class MapComponent implements OnInit{
     const linkElement = document.getElementById('como-llegar-link') as HTMLAnchorElement;
     const imageLinkElement = document.getElementById('map-image-link') as HTMLAnchorElement;
 
-    // Deshabilita el enlace y la imagen mientras se genera la URL
-    linkElement.classList.add('disabled');
-    imageLinkElement.classList.add('disabled');
+    // URL del destino: Albergue La Hoyilla
+    const destination = 'Albergue+La+Hoyilla,+Calle+Dr.+Fleming,+130,+35479,+Las+Palmas';
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
+    // Construir la URL de Google Maps (sin especificar el origen)
+    const googleMapsURL = `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
 
-          // URL del destino: Albergue La Hoyilla
-          const destination = 'Albergue+La+Hoyilla,+Calle+Dr.+Fleming,+130,+35479,+Las+Palmas';
+    // Establecer el href del enlace y de la imagen
+    linkElement.setAttribute('href', googleMapsURL);
+    linkElement.removeAttribute('disabled');
 
-          // Construir la URL de Google Maps
-          const googleMapsURL = `https://www.google.com/maps/dir/${latitude},${longitude}/${destination}/`;
-
-          // Establecer el href del enlace y de la imagen, y habilitarlos
-          linkElement.setAttribute('href', googleMapsURL);
-          linkElement.classList.remove('disabled');
-
-          imageLinkElement.setAttribute('href', googleMapsURL);
-          imageLinkElement.classList.remove('disabled');
-        },
-        (error) => {
-          console.error('Error al obtener la ubicación: ', error);
-        }
-      );
-    } else {
-      console.error('Geolocalización no es soportada por este navegador.');
-    }
-  }
+    imageLinkElement.setAttribute('href', googleMapsURL);
+    imageLinkElement.removeAttribute('disabled');
+  }*/
 
 }
