@@ -79,3 +79,28 @@
     color: #20aec8;
     transform: scale(1.12);
 }
+
+@media screen and (width < 35rem) {
+    .photos-activities {
+        display: grid;
+    }
+    .activity {
+        margin: 20px 50px;
+    
+    }
+    .activities-body a{
+        font-size: 1.5rem;
+    }
+
+    .activity img{
+        width: 250px;
+        height: 150px;
+    }
+
+    .albergue-photo img{
+        margin-top: 30px;
+        width: 250px;
+        height: 150px;
+    }
+    
+}

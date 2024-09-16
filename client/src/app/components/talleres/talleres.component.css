@@ -97,10 +97,20 @@
 
 
 .principal-talleres1 {
-    display: flex; 
-    justify-content: space-between; 
+    justify-content: center; 
     gap: 90px; 
     margin: 50px;
+}
+
+.image-container {
+    display: flex; 
+    justify-content: center; 
+    gap: 10%; 
+    margin: 50px;
+}
+.slide-image{
+    display: flex;
+    justify-content: space-between;
 }
 
 .principal-talleres1 img {
@@ -130,7 +140,7 @@
 }
 
 .section-talleres {
-    justify-content: left;
+    justify-content: center;
     padding: 20px;
     font-family: 'Khand', sans-serif;
     color: rgb(79, 82, 101);
@@ -171,6 +181,119 @@
 .otros-talleres ul {
     text-align: left;
     padding-left: 20px;
-    column-count: 2; /* Divide los elementos en dos columnas */
-    column-gap: 30px; /* Ajusta el espacio entre columnas */
+    column-count: 2;
+    column-gap: 7rem; 
+}
+
+@media screen and (width < 35rem) {
+
+    .navbar {
+        flex-direction: column;
+        padding: 10px;
+        width: 60%;
+        align-items: center;
+        margin: 0 auto; 
+    }
+    .types-talleres {
+        margin: 5px 0;
+        padding: 5px;
+        display: block;
+        width: 130px;
+    }
+    .types-talleres img {
+        display: none;
+    }
+    .navbar span {
+        font-size: 0.9rem; 
+    }
+
+    .types-talleres a {
+        font-size: 0.9rem;
+    }
+
+    .types-talleres::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -5px; 
+        width: 100%;
+        height: 1px; 
+        background-color: rgba(0, 0, 0, 0.1); 
+        transition: background-color 0.3s ease;
+    }
+    .types-talleres:first-child::after {
+        content: none;
+    }
+    .types-talleres:nth-child(3)::before {
+        content: "";
+        position: absolute;
+        bottom: -5px; 
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+        padding: 10px 20px;
+    }
+
+    .section-talleres {
+        padding: 10px;
+    }
+
+    .section-talleres h1 {
+        font-size: 1rem; 
+        margin-bottom: 20px; 
+    }
+
+    .section-talleres ul {
+        font-size: 0.9rem; 
+    }
+
+    .principal-talleres1 {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        gap: 10px;
+        margin: 0 auto;
+        width: 100%; 
+    }
+
+    .talleres-group {
+        gap: 5px;
+        justify-content: space-between;
+    }
+    .taller {
+        width: 45%;
+    }
+
+    .slider-container {
+        width: 100%;
+        height: 150px; /* Ajusta la altura según el tamaño de las imágenes */
+        display: flex;
+        justify-content: center; 
+        overflow: hidden; /* Para evitar que las imágenes sobresalgan del contenedor */
+    }
+        
+       .slide-image {
+        position: absolute;
+        width: 80%;
+        max-width: 150px; 
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+        
+        
+        
+        .slide-image.active {
+        opacity: 1;
+        }
+        
+        .slide-image.inactive {
+        opacity: 0;
+        }
+
 }

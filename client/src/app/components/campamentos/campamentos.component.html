@@ -19,9 +19,10 @@
         </div>
         
         <div class="text-and-photos">
+          <p class="p-cont">Algunas de las actividades que ofrecemos son:<br><br></p>
             <div class="container-2">
                 <ul>
-                    <p>Algunas de las actividades que ofrecemos son:<br><br></p>
+                    
                     <li>Talleres medioambientales.<br></li>
                     <li>Senderismo interpretativo.<br></li>
                     <li>Gymkhana.<br></li>
@@ -46,7 +47,7 @@
             <div class="container-3">
                 <h1 class="lugares2">Elige una de nuestras instalaciones, rellena el formulario y te damos el presupuesto:</h1>
                 <div class="fila-lugares">
-                    <div *ngFor="let content of lugares" class="lugar" (click)="openForm(content)">
+                    <div *ngFor="let content of lugares" class="lugar" (click)="openForm(content)" (click)="pulsador()">
                         <p class="campamento-name">{{ content.title }}</p>
                         <div class="flip-container">
                             <div class="flipper">
@@ -137,13 +138,6 @@
                       <div class="form-group select-group">
                         <label>Actividades acuáticas</label>
                         <select formControlName="actividadAcuatica" required>
-                          <option value="no">No</option>
-                          <option value="si">Sí</option>
-                        </select>
-                      </div>
-                      <div class="form-group select-group">
-                        <label>Meriendas</label>
-                        <select formControlName="meriendas" required>
                           <option value="no">No</option>
                           <option value="si">Sí</option>
                         </select>

@@ -46,3 +46,46 @@
     border-radius: 8px;
     border: 1px solid #b0c745;
 }
+
+
+/* pantallas móviles */
+@media screen and (max-width: 35rem) {
+    .section-charlas {
+        padding: 10px;
+        width: 100%; /* Ajusta el ancho al 100% */
+        box-sizing: border-box; /* Incluye el padding en el ancho */
+    }
+
+    .container-charlas {
+        flex-direction: column; /* Cambia a disposición en columna */
+        align-items: center; /* Centra los elementos */
+        gap: 15px; /* Reduce el espacio entre la lista y las imágenes */
+    }
+
+    .charlas p {
+        padding: 15px;
+        font-size: 1rem; /* Ajusta el tamaño de la fuente para pantallas móviles */
+    }
+
+    .container-charlas ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container-charlas ul li {
+        font-size: 1rem; /* Ajusta el tamaño de la fuente */
+        padding: 5px 0;
+    }
+
+    .images-charlas {
+        align-items: center; /* Centra las imágenes */
+        gap: 15px; /* Reduce el espacio entre las imágenes */
+        margin-top: 15px;
+    }
+
+    .charlas img {
+        width: 100%; /* Ajusta las imágenes al 100% del contenedor */
+        max-width: 130px; /* Tamaño máximo para las imágenes */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+}

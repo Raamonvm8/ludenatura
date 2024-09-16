@@ -17,10 +17,17 @@ import { CharlasComponent } from './charlas/charlas.component';
 export class TalleresComponent {
   title: string = "TALLERES";
   hola: string = "hola";
-
+  currentIndex: number = 0;
+  intervalTime: number = 3000;
 
   talleres: {title: string, image: string}[] = [];
   selectedIndex: number = -1;
+
+  images: string[] = [
+    '../../../assets/talleres/no-photo.jpg',
+    '../../../assets/talleres/no-photo.jpg',
+    '../../../assets/talleres/animacionPic.jpeg'
+  ];
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
@@ -46,6 +53,11 @@ export class TalleresComponent {
       const newSection = this.route.snapshot.firstChild?.url[0]?.path;
       this.updateSelection(newSection);
     });
+
+    setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    }, this.intervalTime);
+
   }
 
   updateSelection(section: string | undefined) {

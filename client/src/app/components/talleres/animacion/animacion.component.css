@@ -45,3 +45,46 @@
     border-radius: 8px;
     border: 1px solid #b0c745;
 }
+
+/* Ajustes para pantallas móviles */
+@media screen and (max-width: 35rem) {
+    .section-animation {
+        padding: 10px;
+        width: 100%; /* Ajusta el ancho para pantallas móviles */
+        box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho total */
+    }
+
+    .container-animation {
+        flex-direction: column; /* Coloca la lista y las imágenes en columnas */
+        gap: 15px; /* Reduce el espacio entre elementos */
+        align-items: center; /* Centra los elementos */
+    }
+
+    .animation p {
+        padding: 15px; /* Reduce el padding */
+        font-size: 1rem; /* Ajusta el tamaño del texto */
+    }
+
+    .container-animation ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .container-animation ul li {
+        font-size: 1rem; /* Ajusta el tamaño de la fuente */
+        padding: 5px 0;
+    }
+
+    .images-animation {
+        gap: 10px; /* Reduce el espacio entre imágenes */
+        align-items: center;
+    }
+
+    .animation img {
+        width: 100%; /* Ajusta el ancho al 100% del contenedor */
+        max-width: 120px; /* Establece un tamaño máximo para las imágenes */
+        height: auto;
+        margin-top: 10px;
+    }
+}
+

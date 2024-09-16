@@ -19,3 +19,21 @@
     color: rgb(79, 79, 79);
    
 }
+
+@media screen and (width < 35rem) {
+    .contact-contenedor {
+        justify-content: center;
+        display: block;
+        width: 100%;
+        gap: 40px;
+    }
+
+    .contact-contenedor img{
+        width: 150px;
+    }
+    .datos{
+        padding: 20px 50px;
+    }
+
+    
+}

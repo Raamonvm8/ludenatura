@@ -91,3 +91,33 @@
 .arrow.right {
     right: -50px; /* Ajusta la posición del botón de la derecha */
 }
+
+@media screen and (max-width: 35rem) {
+    .info-hostal {
+        display: grid;
+        width: 100%;
+        max-width: 100%; /* Asegúrate de que el ancho no exceda el viewport */
+        padding: 0 30px; /* Añade algo de padding para evitar que el contenido toque los bordes */
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box; /* Esto incluye padding dentro del tamaño total */
+    }
+    
+    .info-hostal ul {
+        width: 100%;
+        max-width: 80%;
+        text-align: center;
+        margin-top: 0;
+        font-size: 1.2rem;
+    }
+    
+    .abajo {
+        width: 100%;
+    }
+    
+    .images img {
+        width: 200px;
+        height: 150px;
+    }
+}

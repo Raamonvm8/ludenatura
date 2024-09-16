@@ -4,6 +4,9 @@
     font-family: 'Khand', sans-serif;
     font-size: 1.2rem;
     color: rgb(79, 82, 101);
+    box-sizing: border-box; 
+    max-width: 100%; 
+    overflow-x: hidden;
 }
 
 .section-manualidades h1 {
@@ -72,8 +75,59 @@ ul {
 
 .creativas img,
 .tematicas img {
-    width: 230px;
+    width: 100%;
+    max-width: 180px;
     height: auto;
     border-radius: 8px;
     border: 1px solid #b0c745;
+}
+
+@media screen and (width <35rem) {
+    .texts-part {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .section-manualidades p {
+        font-size: 1rem;
+        padding: 15px;
+    }
+
+    .creativas, .tematicas {
+        padding: 10px;
+    }
+
+    .images-creativas, .images-tematicas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Mantén dos columnas en móviles */
+        gap: 10px; /* Reducir el espacio entre imágenes en móviles */
+    }
+
+    .images-tematicas {
+        margin-top: 10%;
+        gap: 10px;
+    }
+
+    .tematicas-content {
+        display: block;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .tematicas img {
+        max-width: 100px; /* Aumenta ligeramente el tamaño de las imágenes */
+        width: 100%; /* Asegúrate de que ocupen el 100% del contenedor */
+    }
+
+    ul li {
+        font-size: 1rem;
+    }
+    ul{
+        margin: 20px;
+    }
+
+
+
+    
 }

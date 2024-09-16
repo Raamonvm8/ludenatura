@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FondoComponent } from "../fondo/fondo.component";
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink, RouterOutlet } from '@angular/router';
@@ -15,9 +15,17 @@ import { CulturalesComponent } from './culturales/culturales.component';
   styleUrl: './actividades.component.css'
 })
 export class ActividadesComponent {
-
+  currentIndex: number = 0;
+  intervalTime: number = 3000;
   title: string = "ACTIVIDADES";
 
+  images: string[] = [
+    '../../../assets/talleres/no-photo.jpg',
+    '../../../assets/talleres/no-photo.jpg',
+    '../../../assets/talleres/animacionPic.jpeg'
+  ];
+
+  
 
   talleres: {title: string, image: string}[] = [];
   selectedIndex: number = -1;
@@ -35,7 +43,6 @@ export class ActividadesComponent {
     `;
   
     this.talleres = JSON.parse(talleresInfo);
-  
     // Detectar la ruta seleccionada al cargar la página
     const section = this.route.snapshot.firstChild?.url[0]?.path;
     this.updateSelection(section);
@@ -45,6 +52,10 @@ export class ActividadesComponent {
       const newSection = this.route.snapshot.firstChild?.url[0]?.path;
       this.updateSelection(newSection);
     });
+
+    setInterval(() => {
+      this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    }, this.intervalTime);
   }
 
   updateSelection(section: string | undefined) {
@@ -66,5 +77,24 @@ export class ActividadesComponent {
       
     }
   }
+
+  
+    prevSlide() {
+        this.currentIndex = (this.currentIndex > 0) ? this.currentIndex - 1 : this.images.length - 1;
+        this.updateCarousel();
+    }
+
+    nextSlide() {
+        this.currentIndex = (this.currentIndex < this.images.length - 1) ? this.currentIndex + 1 : 0;
+        this.updateCarousel();
+    }
+
+    updateCarousel() {
+        const carouselImages = document.querySelector('.carousel') as HTMLElement;
+        if (carouselImages) {
+            carouselImages.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+        }
+    }
+
 
 }

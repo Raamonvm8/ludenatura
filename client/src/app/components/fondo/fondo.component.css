@@ -25,3 +25,13 @@
 }
 
 
+@media screen and (width < 35rem) {
+
+    .fondo a{
+        font-size: 1.6rem;
+        letter-spacing: 5px;
+    padding: 30px 25px;
+    color: #b0c745;
+    
+}
+}

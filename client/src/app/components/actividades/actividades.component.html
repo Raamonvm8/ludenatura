@@ -16,9 +16,13 @@
                 <img alt="img" src="../../../assets/talleres/no-photo.jpg">
              </article> -->
             <article class="actividadesimg">
-            <img alt="img" src="../../../assets/talleres/no-photo.jpg">
-            <img alt="img" src="../../../assets/talleres/no-photo.jpg">
-            <img alt="img" src="../../../assets/talleres/no-photo.jpg">
+                <!-- Slider container -->
+                <div class="image-container slider-container">
+                    <img *ngFor="let img of images; let i = index"
+                        [src]="img"
+                        [ngClass]="{'active': i === currentIndex, 'inactive': i !== currentIndex}"
+                        class="slide-image">
+                </div>
             </article>
 
             <h1>Lugares dónde realizamos los juegos:</h1>

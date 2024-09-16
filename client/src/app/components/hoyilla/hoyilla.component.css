@@ -43,3 +43,21 @@
   }
 
   
+  @media screen and (max-width: 35rem) {
+    .client-map {
+      justify-content: center;
+      flex-direction: column; /* Apila los elementos verticalmente */
+      width: 100%; /* Asegura que el contenedor no se desborde */
+      max-width: 100%;
+      padding: 0 10px; /* Un poco de padding para los lados */
+      margin-top: 30px;
+    }
+  
+    .client-map > app-clientes, 
+    .client-map > app-map {
+      width: 100%; /* Cada componente ocupa el 100% del ancho en pantallas pequeñas */
+      max-width: 100%;
+      padding: 10px 0; /* Reduce el padding para pantallas pequeñas */
+      margin-right: 20px;
+    }
+  }

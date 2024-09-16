@@ -40,7 +40,7 @@ export class CampamentosComponent implements OnInit{
   //Alojamiento por noche
   precioAlojamiento: number = 12;
   //Desayuno, almuerzo y cena
-  precioPensionCompleta: number = 21;
+  precioPensionCompleta: number = 0;
   //Almuerzo ultimo dia 9.50€
   precioUltimoDia: number = 0;
   //Merienda 2.60€
@@ -54,14 +54,25 @@ export class CampamentosComponent implements OnInit{
   //Precio total
   precioTotal: number = 0;
 
+  //Datos individuales
+  precio_Pension: number = 0;
+  siHayEdades: string = '';
+
   isDropdownOpen = false;
   selectedCourses: { [key: string]: boolean } = {}; 
 
-
+  private cursosMenores6Primaria = [
+    '1º Infantil (3 años)', '2º Infantil (4 años)', '3º Infantil (5 años)',
+    '1º Primaria', '2º Primaria', '3º Primaria', '4º Primaria', '5º Primaria', '6º Primaria'
+  ];
+  
+  private cursosMayores1ESO = [
+    '1º ESO', '2º ESO', '3º ESO', '4º ESO', '1º Bachillerato', '2º Bachillerato'
+  ];
 
   cursos = [
     { name: 'Otros', selected: false },
-    { name: '1º Infantil', selected: false }, { name: '2º Infantil', selected: false }, { name: '3º Infantil', selected: false },
+    { name: '1º Infantil (3 años)', selected: false }, { name: '2º Infantil (4 años)', selected: false }, { name: '3º Infantil (5 años)', selected: false },
     { name: '1º Primaria', selected: false },{ name: '2º Primaria', selected: false },{ name: '3º Primaria', selected: false },{ name: '4º Primaria', selected: false },{ name: '5º Primaria', selected: false },{ name: '6º Primaria', selected: false },
     { name: '1º ESO', selected: false }, { name: '2º ESO', selected: false }, { name: '3º ESO', selected: false }, { name: '4º ESO', selected: false },
     { name: '1º Bachillerato', selected: false }, { name: '2º Bachillerato', selected: false }
@@ -96,14 +107,17 @@ export class CampamentosComponent implements OnInit{
     const campamentos = `
     [
         {"title": "ALBERGUE LA HOYILLA", "image": "../../../assets/homepage-images/albergue_lahoyilla.jpg", "imageBack": "../../../assets/campamentos/ubi_LaHoyilla.png", "sitio": "La Aldea de San Nicolás"},
-        {"title": "AULA DE LA NATURALEZA DE OSORIO", "image": "../../../assets/campamentos/osorio.jpg", "imageBack": "../../../assets/campamentos/ubi_osorio.png", "sitio": "Teror"},
+        {"title": "ALBERGUE DE JUNCALILLO", "image": "../../../assets/campamentos/Juncalillo.jpg", "imageBack": "../../../assets/campamentos/ubi_Juncalillo.png", "sitio": "Gáldar"},
         {"title": "CHIRA", "image": "../../../assets/campamentos/chira.jpg", "imageBack": "../../../assets/campamentos/ubi_chira.png", "sitio": "San Bartolomé de Tirajana"},
         {"title": "AULA DE LA NATURALEZA LAS TEDERAS", "image": "../../../assets/campamentos/tederas.jpg", "imageBack": "../../../assets/campamentos/ubi_LasTederas.png", "sitio": "Santa Lucía de Tirajana"},
         {"title": "AULA DE LA NATURALEZA LA PALMITA", "image": "../../../assets/campamentos/LaPalmita.png", "imageBack": "../../../assets/campamentos/ubi_LaPalmita.png", "sitio": "Agaete"},
-        {"title": "FINCA BAILADERO", "image": "../../../assets/campamentos/ElBailadero.png", "imageBack": "../../../assets/campamentos/ubi_elBailadero.png", "sitio": "Telde"},
-        {"title": "CORTIJO DE HUERTAS", "image": "../../../assets/campamentos/cortijoHuertas.jpg", "imageBack": "../../../assets/campamentos/ubi_deHuertas.png", "sitio": "Tejeda"}
+        {"title": "FINCA BAILADERO", "image": "../../../assets/campamentos/ElBailadero.png", "imageBack": "../../../assets/campamentos/ubi_elBailadero.png", "sitio": "Telde"}
     ]
     `;
+    //{"title": "AULA DE LA NATURALEZA DE OSORIO", "image": "../../../assets/campamentos/osorio.jpg", "imageBack": "../../../assets/campamentos/ubi_osorio.png", "sitio": "Teror"},
+
+    //{"title": "CORTIJO DE HUERTAS", "image": "../../../assets/campamentos/cortijoHuertas.jpg", "imageBack": "../../../assets/campamentos/ubi_deHuertas.png", "sitio": "Tejeda"}
+
 
     this.lugares = JSON.parse(campamentos);
 
@@ -120,7 +134,7 @@ export class CampamentosComponent implements OnInit{
       observations: [''],
       actividadAcuatica:['no'],
       comidaUltima: ['no'],
-      meriendas: ['no'],
+      meriendas: ['si'],
 
       
     }, { validator: this.dateValidator() });
@@ -175,14 +189,15 @@ export class CampamentosComponent implements OnInit{
   //Abrir cerrar formulario
   openForm(lugar: any) {
     this.selectedLugar = lugar;
-    document.body.style.overflow = 'hidden'; // Para evitar el scroll detrás del modal
+    document.body.style.overflow = 'hidden'; 
   }
   closeForm() {
     this.selectedLugar = null;
-    document.body.style.overflow = ''; // Restaurar el scroll detrás del modal
-    this.precioActividades = 28; this.precioAlojamiento =12; this.precioMerienda=0; this.precioPensionCompleta=21; this.precioTotal=0; this.precioActividadAcuatica=0; this.precioUltimoDia=0;
+    document.body.style.overflow = ''; 
+    this.precioActividades = 28; this.precioAlojamiento =12; this.precioMerienda=0; this.precioPensionCompleta=0; this.precioTotal=0; this.precioActividadAcuatica=0; this.precioUltimoDia=0; this.precio_Pension=0; this.siHayEdades = '';
   }
 
+  //Formula para calcular dias de estancia
   calcularDias(){
     if (this.formData.fechaIni && this.formData.fechaFin) {
       const fechaIni = new Date(this.formData.fechaIni);
@@ -200,6 +215,7 @@ export class CampamentosComponent implements OnInit{
     console.log(this.numeroDias);
   }
 
+  //Cambiar el formato fecha
   formatDate(fecha: string){
     const dividir = fecha.split('-');
     if(dividir.length===3){
@@ -216,6 +232,7 @@ export class CampamentosComponent implements OnInit{
     this.anoActual = ano;
   }
 
+  //Obtener fecha actual
   getCurrentDate(): { dia: string, mes: string, ano: string } {
     const today = new Date();
     const options: Intl.DateTimeFormatOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
@@ -256,40 +273,77 @@ export class CampamentosComponent implements OnInit{
     let precioFinal = 0;
     for(let i=1; i<5; i++){
       if(this.numeroNoches===i){
+        //ALOJAMIENTO LO MISMO PARA TODOS?
         this.precioAlojamiento=this.precioAlojamiento*i;
-        this.precioPensionCompleta=this.precioPensionCompleta*i;
-        precioFinal += this.precioAlojamiento + this.precioPensionCompleta;
+        this.precioMerienda += 2.60*i;
         if(this.reservaForm.value.actividadAcuatica === 'si'){
           this.precioActividadAcuatica += 18;
-          precioFinal += this.precioActividadAcuatica;
-        }
-        if(this.reservaForm.value.meriendas === 'si'){
-          this.precioMerienda += 2.60*i;
-          precioFinal += this.precioMerienda;
-        }
-        if(this.reservaForm.value.comidaUltima === 'si'){
-          this.precioUltimoDia += 9.50;
-          precioFinal += this.precioUltimoDia;
         }
         if(i===1){
-          precioFinal += this.precioActividades;
+
         }else if(i===2){
           this.precioActividades += 14;
-          precioFinal += this.precioActividades;
         }else if(i===3){
           this.precioActividades += 14+15;
-          precioFinal += this.precioActividades;
         }else if(i===4){
           this.precioActividades += 14+15+15;
-          precioFinal += this.precioActividades;
+        }
+        if(this.selectedLugar.title === 'ALBERGUE LA HOYILLA'){
+          this.precio_Pension=21;
+          this.precioPensionCompleta=21*i;
+          if(this.reservaForm.value.comidaUltima === 'si'){
+            this.precioUltimoDia += 9.50;
+          }
+        }else if(this.selectedLugar.title === 'AULA DE LA NATURALEZA DE OSORIO'){
+          
+
+        }else if(this.selectedLugar.title === 'AULA DE LA NATURALEZA LA PALMITA'){
+          const { menoresDe6Primaria, mayoresDe1ESO } = this.checkCursoRange();
+          
+          if (menoresDe6Primaria) {
+            this.siHayEdades = ' (menores de 12 años)';
+            this.precio_Pension=20;
+            if(this.reservaForm.value.comidaUltima === 'si' && this.selectedCourses){
+              this.precioUltimoDia += 10.75;
+              
+            }
+            this.precioPensionCompleta = 20*i;
+          }else if (mayoresDe1ESO) {
+            this.siHayEdades = ' (mayores de 12 años)';
+            this.precio_Pension = 23.20;
+            if(this.reservaForm.value.comidaUltima === 'si' && this.selectedCourses){
+              this.precioUltimoDia += 13;
+            }
+            this.precioPensionCompleta = 23.20*i;
+          }
+        }else {
+          this.precio_Pension = 21;
+          if(this.reservaForm.value.comidaUltima === 'si'){
+            this.precioUltimoDia += 9.50;
+          }
         }
       }
     }
-
+    precioFinal += this.precioAlojamiento + this.precioPensionCompleta + this.precioMerienda+ this.precioActividades + this.precioUltimoDia + this.precioActividadAcuatica;
     this.igic = precioFinal*0.07;
-
     this.precioTotal = precioFinal + this.igic;
+}
 
+checkCursoRange(): { menoresDe6Primaria: boolean, mayoresDe1ESO: boolean } {
+  const selectedCourses = this.cursos.filter(curso => curso.selected).map(curso => curso.name);
+
+  const menoresDe6Primaria = selectedCourses.some(curso => this.cursosMenores6Primaria.includes(curso));
+  const mayoresDe1ESO = selectedCourses.some(curso => this.cursosMayores1ESO.includes(curso));
+
+  return { menoresDe6Primaria, mayoresDe1ESO };
+}
+
+  pulsador(): void {
+    if (confirm(`Después de enviar el formulario, nos pondremos en contacto con usted para enviarle presupuestos y poder confirmar la reserva. ¡Muchas gracias!`)) {
+      
+    }else{
+      this.closeForm();
+    } 
 
   }
 
@@ -310,6 +364,7 @@ export class CampamentosComponent implements OnInit{
     } else {
       console.log('Formulario no enviado');
     }
+    
 
   
   }
@@ -351,6 +406,9 @@ export class CampamentosComponent implements OnInit{
       value_actividadAcuatica: this.reservaForm.value.actividadAcuatica,
       value_meriendas: this.reservaForm.value.meriendas,
       value_ultimaComida: this.reservaForm.value.comidaUltima,
+      from_precioUltimaComida: this.precioUltimoDia,
+      from_precioPension: this.precio_Pension,
+      from_edades: this.siHayEdades,
     };
 
     //service ID lude: 'service_qgvt02b' ravama: 'service_wstz9vg', template ID, API key
