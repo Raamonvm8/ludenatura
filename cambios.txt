@@ -1,10 +1,24 @@
 - Pasarme todas las im‡genes organizadas en carpetas
 - Confirmar ubicaciones de los sitios en /campamentos
+- Texto introductorio de Talleres/charlas
 - Corregir ortograf’a si todos los nombres son correctos
 - Decirme otros tipos de clientes en el apartado La Hoyilla
-- Hacerme las descripciones en la secci—n Actividades (
+- Hacerme las descripciones en la secci—n Actividades 
+- Foto que quieran para apartado Contacto
 
 
 Posibles actualizaciones:
 - Reservar estancia en La Hoyilla a travŽs de su secci—n.
 - Formulario para solicitar un taller.
+
+Datos:
+EMAILJS: ravama00@hotmail.com (r3***...)
+
+
+Detalles albergues:
+Osorio: No incluye pension completa (la pagan ellos)
+
+La Palmita: 
+Pensi—n completa --> Hasta 12 a–os: 20Û. Ni–os mayores de 12: 23,20Û.
+Almuerzo œltimo d’a --> Hasta 12 a–os: 10,75Û. Mayores de 12 a–os: 13Û.
+Todo + igic 7%
