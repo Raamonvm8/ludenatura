@@ -1,0 +1,82 @@
+.map-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 10px;
+    gap: 20px;
+}
+
+.map-container h3{
+    color: #b0c745;
+}
+
+.elementor-widget-google_maps iframe {
+    height: 300px;
+    width: 80%; 
+}
+.map-container img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.map-container a{
+    color: white;
+    text-decoration: none;
+    
+}
+
+.yeka {
+    width: 50%;
+    background-color: #20aec8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    
+}
+.elementor-widget-google_maps .elementor-widget-container {
+    overflow: hidden;
+    width: 700px;
+}
+
+.map-container img:hover {
+    transform: scale(0.98);
+}
+.map-container .yeka:hover {
+    transform: scale(0.98);
+}
+
+.map-container a.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.map-container img.disabled {
+    opacity: 0.5;
+}
+
+@media screen and (max-width: 35rem) {
+    .elementor-widget-google_maps iframe {
+        width: 100%; /* Asegura que el mapa ocupe todo el ancho disponible */
+    }
+    .elementor-widget-google_maps .elementor-widget-container {
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    .map-container img {
+        width: 100%;
+    }
+
+    .yeka {
+        width: 100%;
+    }
+}
