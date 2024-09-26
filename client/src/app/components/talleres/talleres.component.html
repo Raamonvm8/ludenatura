@@ -1,10 +1,10 @@
 <app-fondo [section]="title">
-    <h1 class="title">Escoge entre todos los talleres que ofrecemos:</h1>
+    <h1 class="title">Elige entre todos los talleres que ofrecemos:</h1>
     <nav class="navbar">
-        <article *ngFor="let item of talleres; let i = index" 
+        <article (click)="showHide(i)" [routerLink]="['./', item.title.toLowerCase(), i]" *ngFor="let item of talleres; let i = index" 
                  [ngClass]="{'selected': selectedIndex === i}" 
                  class="types-talleres">
-                 <a (click)="showHide(i)" [routerLink]="['./', item.title.toLowerCase(), i]">
+                 <a >
                     <img alt="{{item.title}}" [src]="item.image">
                     <span>{{item.title}}</span>
                   </a>
@@ -30,7 +30,6 @@
                 <div class="taller">
                     <h2>Talleres para mujeres:</h2>
                     <ul>
-                        <li>Proyecto de Igualdad “Alas”</li>
                         <li>Proyecto de Empoderamiento</li>
                         <li>Jornadas de bienestar y autocuidado</li>
                         <li>Retiros de crecimiento</li>
@@ -52,10 +51,7 @@
             <div class="otros-talleres">
                 <h2>Otros talleres:</h2>
                 <ul>
-                    <li>Taller de Tai-Chí</li>
                     <li>Guitarra y Timple</li>
-                    <li>Oficios artesanales (Cerámica creativa, jabones artesanales, rosetas artesanales, técnica de pintura en piedras, técnica del trencadís.)</li>
-                    <li>Fotografía</li>
                     <li>Ajedrez</li>
                     <li>Baile canario</li>
                 </ul>
