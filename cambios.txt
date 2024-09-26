@@ -22,3 +22,7 @@ La Palmita:
 Pensi—n completa --> Hasta 12 a–os: 20Û. Ni–os mayores de 12: 23,20Û.
 Almuerzo œltimo d’a --> Hasta 12 a–os: 10,75Û. Mayores de 12 a–os: 13Û.
 Todo + igic 7%
+
+
+Cambiar a carpeta angular:
+En el servidor panel tengo en la carpeta public_html la carpeta angular con el proyecto de angular dist, para que funcione con esta carpeta debo modificar el archivo .htaccess y desconectar la linea de angular.
