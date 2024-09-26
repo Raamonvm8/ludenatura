@@ -4,8 +4,9 @@
     margin-top: 20px;
     color: #b0c745;
     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    font-family: 'Khand', sans-serif;
-    font-size: 1.5rem;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-size: 1.9rem;
 }
 
 
@@ -50,6 +51,7 @@
     background-color: transparent;
     padding: 10px 40px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .types-actividades a {
@@ -87,7 +89,7 @@
 
 
 .navbar .types-actividades.selected {
-    background-color: #b0c745;
+    background-color: #afc745c8;
     margin-right: 10px;
     margin-left: 10px;  
 }
@@ -113,23 +115,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.pagination-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-}
 
-.pagination-controls button {
-    padding: 10px 20px;
-    margin: 0 5px;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-.pagination-controls span {
-    font-size: 1rem;
-}
 
 .section-actividades {
     display: flex;
@@ -146,19 +132,16 @@
     color: #b0c745;;
 }
 
-#h1 {
-    margin-bottom: 50px;
-    color: #b0c745;;
-}
-
 .section-actividades ul{
     padding: 0;
     margin: 0;
     text-align: left;
     font-size: 1.5rem;
+    list-style-type: none;
 }
 
 .section-actividades li{
+    
     margin-bottom: 10px;
 }
 
