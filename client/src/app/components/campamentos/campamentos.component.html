@@ -27,15 +27,16 @@
                     <li>Senderismo interpretativo.<br></li>
                     <li>Gymkhana.<br></li>
                     <li>Juegos de pista y rastreo.<br></li>
-                    <li>Bailes coreografía.<br></li>
+                    <li>Bailes con coreografía.<br></li>
                     <li>Manualidades con material reciclado y ecológico.<br></li>
                     <li>Talleres culinarios.<br></li>
                     <li>Deportes canarios.<br></li>
                     <li>Visitas a huertos ecológicos.<br></li>
                     <li>Juegos alternativos.<br></li>
-                    <li>Discotecas.<br></li>
+                    <li>Discoteca.<br></li>
                     <li>Juegos nocturnos.<br></li>
                     <li>Visionado de estrellas.<br></li>
+                    <li>Teatro.<br></li>
                 </ul>
                 <div class="photo-gallery2">
                     <img class="activity-img" alt="image-campament" [src]="currentActivity" #activityImg>
@@ -43,11 +44,11 @@
             </div>
         </div>
         <div class="text-and-photos">
-            <h1 class="lugares">¡Pídenos tu campamento sin ningún compromiso!</h1>
+            <h1 class="lugares">¡Pídenos tu campamento sin compromiso!</h1>
             <div class="container-3">
-                <h1 class="lugares2">Elige una de nuestras instalaciones, rellena el formulario y te damos el presupuesto:</h1>
+                <h1 class="lugares2">Elige el lugar que prefieras, pulsa encima de la foto, rellena el formulario y te enviamos presupuesto:</h1>
                 <div class="fila-lugares">
-                    <div *ngFor="let content of lugares" class="lugar" (click)="openForm(content)" (click)="pulsador()">
+                    <div *ngFor="let content of lugares" class="lugar" (click)="openForm(content)">
                         <p class="campamento-name">{{ content.title }}</p>
                         <div class="flip-container">
                             <div class="flipper">
@@ -71,7 +72,7 @@
                   <span class="close" (click)="closeForm()">×</span>
                   <h2>{{ selectedLugar.title }}</h2>
                   <h3>Formulario de reserva</h3>
-                  <form [formGroup]="reservaForm" (ngSubmit)="onSubmit()" >
+                  <form  [formGroup]="reservaForm" (ngSubmit)="onSubmit()" >
                     <div class="form-row">
                         <div class="form-group">
                           <label for="nombre">Nombre y apellidos<span class="required">*</span></label>
@@ -85,7 +86,7 @@
                           <label for="movil">Móvil (con Whatsapp)<span class="required">*</span></label>
                           <input type="text" id="movil" formControlName="movil" [(ngModel)]="formData.movil"  [ngClass]="{'form-control': true, 'invalid': isFieldInvalid('movil')}">
                         </div>
-                      </div>
+                    </div>
                     <div class="form-row">
                         <div class="form-group">
                           <label for="dias">Colegio/IES<span class="required">*</span></label>
@@ -93,11 +94,11 @@
                         </div>
                         <div class="form-group">
                           <label for="cursos">Cursos</label>
-                          <div class="custom-dropdown">
-                            <button type="button" class="dropdown-toggle" (click)="toggleDropdown()">
-                              Seleccionar cursos
+                          <div  class="custom-dropdown" [ngClass]="{'form-control': true, 'invalid': isFieldInvalid('cursos')}">
+                            <button type="button" class="dropdown-toggle" (click)="toggleDropdown()" (document:click)="onClickOutside($event)" >
+                              Seleccionar cursos <i class="fas fa-chevron-down" style="margin-left: 40%; color: rgb(104, 104, 104);"></i>
                             </button>
-                            <div class="dropdown-menu" [class.show]="isDropdownOpen">
+                            <div *ngIf="isDropdownOpen" class="dropdown-menu" [class.show]="isDropdownOpen">
                               <label *ngFor="let curso of cursos">
                                 <input 
                                   type="checkbox" 
@@ -136,7 +137,7 @@
                     <label class="observaciones-label">Opciones adicionales:</label>
                     <div class="form-row">
                       <div class="form-group select-group">
-                        <label>Actividades acuáticas</label>
+                        <label>Actividades acuáticas (Canteras)</label>
                         <select formControlName="actividadAcuatica" required>
                           <option value="no">No</option>
                           <option value="si">Sí</option>
@@ -160,7 +161,7 @@
                           <textarea type="observaciones" id="observaciones" formControlName="observations" class="observaciones" [(ngModel)]="formData.observations"></textarea>
                         </div>
                     </div>
-                    <div *ngIf="isFieldInvalid('nombre') || isFieldInvalid('email') || isFieldInvalid('pax') || isFieldInvalid('profesores') || isFieldInvalid('movil') || isFieldInvalid('fechaIni') || isFieldInvalid('fechaFin') || isFieldInvalid('colegio')" class="error">
+                    <div *ngIf="isFieldInvalid('nombre') || isFieldInvalid('email') || isFieldInvalid('pax') || isFieldInvalid('profesores') || isFieldInvalid('movil') || isFieldInvalid('fechaIni') || isFieldInvalid('fechaFin') || isFieldInvalid('colegio') || isFieldInvalid('cursos')" class="error">
                         Completa los campos obligatorios.
                     </div>
                     <button type="submit">Enviar</button>
@@ -172,7 +173,7 @@
         </div>
         
         <div class="text-and-photos">
-            <h1 class="lugares2">Para cualquier duda, no dude en contactarnos:</h1>
+            <h1 class="lugares2">Para más información, contacte a través de:</h1>
 
             <div class="container-4">
                 <ul>
@@ -185,9 +186,9 @@
                             </a>
                         </article>
                         <article class="photos-info">
-                            <a href="tel:+34600420871">
+                            <a href="tel:+34928431595">
                                 <img class="info" alt="image-campament" src="../../../assets/campamentos/phone-99276_1280.png">
-                                <span>600420871</span>
+                                <span>928431595</span>
                             </a>
                         </article>
                     </div>

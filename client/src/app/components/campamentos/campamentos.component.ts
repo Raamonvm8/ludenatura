@@ -1,5 +1,5 @@
 import { NgClass, NgFor, NgIf } from '@angular/common';
-import { Component, OnInit, ViewChild, ElementRef, Renderer2, NgModule } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, NgModule, HostListener } from '@angular/core';
 import { FondoComponent } from "../fondo/fondo.component";
 import { MapaComponent } from "./mapa/mapa.component";
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms'; 
@@ -59,6 +59,7 @@ export class CampamentosComponent implements OnInit{
   siHayEdades: string = '';
 
   isDropdownOpen = false;
+  dropdownAdvertise = false;
   selectedCourses: { [key: string]: boolean } = {}; 
 
   private cursosMenores6Primaria = [
@@ -95,7 +96,7 @@ export class CampamentosComponent implements OnInit{
   currentIndex: number = 0;
   @ViewChild('activityImg') activityImg!: ElementRef;
 
-  constructor(private elRef: ElementRef, private renderer: Renderer2,private fb: FormBuilder) {
+  constructor(private elRef: ElementRef, private renderer: Renderer2,private fb: FormBuilder, private el: ElementRef) {
 
   }
 
@@ -107,8 +108,8 @@ export class CampamentosComponent implements OnInit{
     const campamentos = `
     [
         {"title": "ALBERGUE LA HOYILLA", "image": "../../../assets/homepage-images/albergue_lahoyilla.jpg", "imageBack": "../../../assets/campamentos/ubi_LaHoyilla.png", "sitio": "La Aldea de San Nicolás"},
-        {"title": "ALBERGUE DE JUNCALILLO", "image": "../../../assets/campamentos/Juncalillo.jpg", "imageBack": "../../../assets/campamentos/ubi_Juncalillo.png", "sitio": "Gáldar"},
-        {"title": "CHIRA", "image": "../../../assets/campamentos/chira.jpg", "imageBack": "../../../assets/campamentos/ubi_chira.png", "sitio": "San Bartolomé de Tirajana"},
+        {"title": "ALBERGUE JUNCALILLO", "image": "../../../assets/campamentos/Juncalillo.jpg", "imageBack": "../../../assets/campamentos/ubi_Juncalillo.png", "sitio": "Gáldar"},
+        {"title": "ALBERGUE CHIRA", "image": "../../../assets/campamentos/chira.jpg", "imageBack": "../../../assets/campamentos/ubi_chira.png", "sitio": "San Bartolomé de Tirajana"},
         {"title": "AULA DE LA NATURALEZA LAS TEDERAS", "image": "../../../assets/campamentos/tederas.jpg", "imageBack": "../../../assets/campamentos/ubi_LasTederas.png", "sitio": "Santa Lucía de Tirajana"},
         {"title": "AULA DE LA NATURALEZA LA PALMITA", "image": "../../../assets/campamentos/LaPalmita.png", "imageBack": "../../../assets/campamentos/ubi_LaPalmita.png", "sitio": "Agaete"},
         {"title": "FINCA BAILADERO", "image": "../../../assets/campamentos/ElBailadero.png", "imageBack": "../../../assets/campamentos/ubi_elBailadero.png", "sitio": "Telde"}
@@ -247,6 +248,7 @@ export class CampamentosComponent implements OnInit{
   //Recoger opciones de cursos
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
+    this.dropdownAdvertise = !this.dropdownAdvertise;
   }
   onCursoChange(curso: any, event: Event) {
     // Asegúrate de que el target sea un HTMLInputElement
@@ -254,6 +256,17 @@ export class CampamentosComponent implements OnInit{
     curso.selected = input.checked; // Actualiza la selección
   
     this.updateSelectedCourses(); // Actualiza la cadena de cursos seleccionados
+  }
+  closeDropdown() {
+    this.isDropdownOpen = false;
+  }
+  onClickOutside(event: Event) {
+    const clickedElement = event.target as HTMLElement;
+    const dropdownElement = document.querySelector('.dropdown-menu');
+
+    if (this.isDropdownOpen && dropdownElement && !dropdownElement.contains(clickedElement)) {
+      this.closeDropdown();
+    }
   }
 
   updateSelectedCourses() {
@@ -303,6 +316,7 @@ export class CampamentosComponent implements OnInit{
           if (menoresDe6Primaria) {
             this.siHayEdades = ' (menores de 12 años)';
             this.precio_Pension=20;
+            this.precioPensionCompleta=20*i;
             if(this.reservaForm.value.comidaUltima === 'si' && this.selectedCourses){
               this.precioUltimoDia += 10.75;
               
@@ -311,13 +325,15 @@ export class CampamentosComponent implements OnInit{
           }else if (mayoresDe1ESO) {
             this.siHayEdades = ' (mayores de 12 años)';
             this.precio_Pension = 23.20;
+            this.precioPensionCompleta = 23.20*i;
             if(this.reservaForm.value.comidaUltima === 'si' && this.selectedCourses){
               this.precioUltimoDia += 13;
             }
-            this.precioPensionCompleta = 23.20*i;
+            
           }
         }else {
           this.precio_Pension = 21;
+          this.precioPensionCompleta = 21*i;
           if(this.reservaForm.value.comidaUltima === 'si'){
             this.precioUltimoDia += 9.50;
           }
@@ -338,14 +354,6 @@ checkCursoRange(): { menoresDe6Primaria: boolean, mayoresDe1ESO: boolean } {
   return { menoresDe6Primaria, mayoresDe1ESO };
 }
 
-  pulsador(): void {
-    if (confirm(`Después de enviar el formulario, nos pondremos en contacto con usted para enviarle presupuestos y poder confirmar la reserva. ¡Muchas gracias!`)) {
-      
-    }else{
-      this.closeForm();
-    } 
-
-  }
 
   onSubmit(): void {
     this.submitted = true; // Marca el formulario como enviado
@@ -414,7 +422,7 @@ checkCursoRange(): { menoresDe6Primaria: boolean, mayoresDe1ESO: boolean } {
     //service ID lude: 'service_qgvt02b' ravama: 'service_wstz9vg', template ID, API key
     emailjs.send('service_wstz9vg', 'template_tan4lri', templateParams, '3KBSltLvruiFMO5Cq')
       .then(response => {
-        alert('Formulario enviado con éxito');
+        alert('Formulario enviado con éxito, nos pondremos en contacto con usted lo antes posible.');
       }, error => {
         console.error('Error al enviar el formulario', error);
       });
