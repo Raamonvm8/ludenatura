@@ -203,7 +203,8 @@ nav a:hover {
 
     .dropdown-content {
         display: none; 
-        position: absolute;
+        visibility: hidden;
+        /*position: absolute;
         background-color: #f9f9f9;
         box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         min-width: 190px;
@@ -212,13 +213,13 @@ nav a:hover {
         transform: translateX(-10px); 
         opacity: 0;
         transition: opacity 0.3s ease-in-out;
-        z-index: 101;
+        z-index: 101;*/
     }
 
-    .dropdown.show .dropdown-content {
+    /*.dropdown.show .dropdown-content {
         display: block; 
         opacity: 1;
-    }
+    }*/
     .wrapper{
         border-bottom: 3px solid #eee; 
         width: 100%;
