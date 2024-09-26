@@ -17,6 +17,8 @@
 
 .info-hostal li {
     text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
     padding: 5px 0; 
 }
 

@@ -1,6 +1,13 @@
 .title {
     color: #b0c745;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
     padding: 20px;
+}
+
+h3 {
+  color: #6a6a6a;
 }
 
 .client-map {
@@ -42,6 +49,7 @@
     text-align: center;
   }
 
+
   
   @media screen and (max-width: 35rem) {
     .client-map {
@@ -51,6 +59,9 @@
       max-width: 100%;
       padding: 0 10px; /* Un poco de padding para los lados */
       margin-top: 30px;
+    }
+    h3{
+      font-size: 1rem;
     }
   
     .client-map > app-clientes, 
