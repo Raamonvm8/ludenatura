@@ -13,6 +13,7 @@ import { DeportivasyaventuraComponent } from './components/actividades/deportiva
 import { CulturalesComponent } from './components/actividades/culturales/culturales.component';
 import { HoyillaComponent } from './components/hoyilla/hoyilla.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { JuncalilloComponent } from './components/juncalillo/juncalillo.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' }, // Ruta por defecto
@@ -42,6 +43,7 @@ export const routes: Routes = [
         ]
     },
     { path: 'lahoyilla', component: HoyillaComponent},
+    { path: 'juncalillo', component: JuncalilloComponent},
     { path: 'contacto', component: ContactoComponent},
 
 ];
